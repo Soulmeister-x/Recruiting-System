@@ -1,0 +1,8 @@
+.git/
+.venv
+__pychache__/
+build/
+*.log
+lib/
+lib64/
+var/
