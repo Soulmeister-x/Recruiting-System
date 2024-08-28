@@ -18,3 +18,14 @@ TODO: import closer details from joplin
     - [ ] login / register
 ...
 - [ ] create databases
+
+
+
+## Architecture
+
+The software is planned to consist of three parts:
+
+1. postgres database
+2. python backend FastAPI
+3. python WebApp streamlit
+
