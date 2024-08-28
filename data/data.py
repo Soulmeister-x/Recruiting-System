@@ -1,6 +1,6 @@
 def get_data() -> dict:
     return {
-        "data": [
+        "data": {
             "users": [
                 {
                     'name': 'admin1',
@@ -51,7 +51,7 @@ def get_data() -> dict:
 
             ]
 
-        ]
+        }
     }
 
 
