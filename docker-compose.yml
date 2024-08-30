@@ -5,13 +5,20 @@ services:
         image: postgres:alpine
         container_name: postgres_container
     environment:
-      POSTGRES_USER: your_username
-      POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: your_database
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  fastapi:
+    image: python:3.12-slim
+    container_name: fastapi_container
+    command: sh -c "pip install -r requirements.txt && fastapi run fastapi.py
+    depends_on:
+      - postgres
 
   streamlit:
     image: python:3.12-slim
@@ -24,6 +31,7 @@ services:
       - "8501:8501"
     depends_on:
       - postgres
+      - fastapi
 
 volumes:
   postgres_data:
